@@ -1,0 +1,4 @@
+namespace SpaceBattle.Lib.Generated
+{
+{{Rules}}
+}
