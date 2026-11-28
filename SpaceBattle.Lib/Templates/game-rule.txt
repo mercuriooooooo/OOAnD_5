@@ -1,0 +1,12 @@
+    public sealed class {{RuleName}} : SpaceBattle.Lib.IGameRule
+    {
+        public string Name => "{{CommandName}}";
+        public string CommandTypeName => "{{CommandType}}";
+        public string DependencyKey => "{{DependencyKey}}";
+        public string Parameters => "{{Parameters}}";
+
+        public string Describe()
+        {
+            return "{{Description}}";
+        }
+    }

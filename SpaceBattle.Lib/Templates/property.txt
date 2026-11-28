@@ -1,0 +1,28 @@
+
+{{#HasGetter}}
+        public static System.Func<object[], object> {{Name}}Get =
+{{#CustomGetter}}
+            args => {{GetterCall}};
+{{/CustomGetter}}
+{{#DefaultGetter}}
+            SpaceBattle.Lib.AdapterStrategies.Get<{{TypeName}}>("{{GetKey}}");
+{{/DefaultGetter}}
+{{/HasGetter}}
+{{#HasSetter}}
+        public static System.Action<object[]> {{Name}}Set =
+{{#CustomSetter}}
+            args => { {{SetterCall}}; };
+{{/CustomSetter}}
+{{#DefaultSetter}}
+            SpaceBattle.Lib.AdapterStrategies.Set("{{SetKey}}");
+{{/DefaultSetter}}
+{{/HasSetter}}
+        public {{TypeName}} {{Name}}
+        {
+{{#HasGetter}}
+            get => ({{TypeName}}){{Name}}Get(new object[] { _item });
+{{/HasGetter}}
+{{#HasSetter}}
+            set => {{Name}}Set(new object[] { _item, value });
+{{/HasSetter}}
+        }

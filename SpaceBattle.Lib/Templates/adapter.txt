@@ -1,0 +1,10 @@
+    public class {{AdapterName}} : {{InterfaceType}}
+    {
+        private readonly SpaceBattle.Lib.IGameItem _item;
+
+        public {{AdapterName}}(SpaceBattle.Lib.IGameItem item)
+        {
+            _item = item;
+        }
+{{Properties}}
+    }
