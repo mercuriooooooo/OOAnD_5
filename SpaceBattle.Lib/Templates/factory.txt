@@ -1,0 +1,12 @@
+    public class {{FactoryName}} : SpaceBattle.Lib.IFactory
+    {
+        public object Create(SpaceBattle.Lib.IGameItem item)
+        {
+            if (item == null)
+            {
+                throw new System.ArgumentNullException(nameof(item));
+            }
+
+            return new {{AdapterName}}(item);
+        }
+    }
